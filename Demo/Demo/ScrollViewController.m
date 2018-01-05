@@ -7,7 +7,7 @@
 //
 
 #import "ScrollViewController.h"
-#import "MobileTracking.h"
+#import "GDTMobileTracking.h"
 @interface ScrollViewController ()
 @property (weak, nonatomic) IBOutlet UIView *adView;
 
@@ -30,43 +30,43 @@
 //    NSString *url = @"http://v.admaster.com.cn/i/a90981,b1899467,c2,i0,m202,8a2,8b2,h,2p,2jtt,2w15,2x1101,2d1234,va1,2g0101,uhttp://www.baidu.com";
 ////        NSString *url2 = @"http://v.miaozhen.com/i/a90981,p1899467,c2,i0,m202,8a2,8b2,h,2p,2jtt,2w15,2x1101,2d1234,va1,2g0101";
 //    NSString *url2 = @"http://v.admaster.com.cn/i/a90981,b1899467,c2,i0,m202,8a2,8b2,h,2p,2jtt,2w15,2x1101,2d1234,va1,2g0101";
-//    NSString *url = @"http://test.m.cn.miaozhen.com/x/k=test1234&p=test5678&va=1&vb=15&vj=1111&vi=10&vh=80&o=www.baidu.com";
-    NSString *url = @"http://v.admaster.com.cn/i/a90981,b1899467,c2,i0,m202,8a2,8b2,h,2p,2jtt,2w15,2x1101,2d1234,va1,2g0101,uhttp://www.baidu.com";
+    NSString *url = @"http://v.admaster.com.cn/i/a100170,b2178782,c2,i0,m202,8a2,8b1,2v50,2u2,h";
+//    NSString *url = @"http://v.admaster.com.cn/i/a90981,b1899467,c2,i0,m202,8a2,8b2,h,2p,2jtt,2w15,2x1101,2d1234,va1,2g0101,uhttp://www.baidu.com";
 
 //    NSLog(@"普通曝光链接");
-//    [[MobileTracking sharedInstance] view:url];
+//    [[GDTMobileTracking sharedInstance] view:url];
     
 //    static BOOL vb = YES;
 //    if(vb = !vb) {
 //        printf("\n-----------------------viewability曝光链接\n");
-//        [[MobileTracking sharedInstance] view:url ad:_adView];
+//        [[GDTMobileTracking sharedInstance] view:url ad:_adView];
     
     //开始监测
-    [[MobileTracking sharedInstance] viewVideo:url ad:_adView videoPlayType:2];
+    [[GDTMobileTracking sharedInstance] viewVideo:url ad:_adView videoPlayType:2 edid:@"edid6666"];
     
     //5秒后停止监测
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"url stop concurrent:");
-        for(int i =0; i< 10;i++) {
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                [[MobileTracking sharedInstance] stop:url];
-            });
-
-        }
-    });
-//        [[MobileTracking sharedInstance] view:url2 ad:_adView];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"url stop concurrent:");
+//        for(int i =0; i< 10;i++) {
+//            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//                [[GDTMobileTracking sharedInstance] stop:url];
+//            });
+//
+//        }
+//    });
+//        [[GDTMobileTracking sharedInstance] view:url2 ad:_adView];
 
         
        
 //    } else {
 //        printf("\n-----------------------viewability视频曝光链接\n");
-//        [[MobileTracking sharedInstance] viewVideo:url ad:_adView videoPlayType:11];
+//        [[GDTMobileTracking sharedInstance] viewVideo:url ad:_adView videoPlayType:11];
 //    }
     
 //    NSLog(@"视频曝光链接");
-//    [[MobileTracking sharedInstance] viewVideo:url ad:_adView];
+//    [[GDTMobileTracking sharedInstance] viewVideo:url ad:_adView];
 //    NSLog(@"点击链接");
-//    [[MobileTracking sharedInstance] click:url];
+//    [[GDTMobileTracking sharedInstance] click:url];
 
     // Do any additional setup after loading the view.
     //
