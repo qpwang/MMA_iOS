@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MobileTracking.h"
+#import "GDTMobileTracking.h"
 
 @implementation AppDelegate
 
@@ -15,8 +15,9 @@
 {
     NSLog(@"%@",NSHomeDirectory());
     // Override point for customization after application launch.
-    [[MobileTracking sharedInstance] enableLog:YES];
-//    [[MobileTracking sharedInstance] view:@"http://vxyz.admaster.com.cn/v/a17298,b81949763,c3194,i0,m201"];
+    [[GDTMobileTracking sharedInstance] enableLog:YES];
+//    [[GDTMobileTracking sharedInstance] view:@"http://v.admaster.com.cn/i/a100170,b2178782,c2,i0,m202,8a2,8b1,2v50,2u2,h"];
+//    [[GDTMobileTracking sharedInstance] viewVideo:@"http://v.admaster.com.cn/i/a100170,b2178782,c2,i0,m202,8a2,8b1,2v50,2u2,h" ad:nil videoPlayType:0];
     return YES;
 }
 							
@@ -28,14 +29,14 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [[MobileTracking sharedInstance] didEnterBackground];
+    [[GDTMobileTracking sharedInstance] didEnterBackground];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    [[MobileTracking sharedInstance] didEnterForeground];
+    [[GDTMobileTracking sharedInstance] didEnterForeground];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
@@ -46,7 +47,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [[MobileTracking sharedInstance] willTerminate];
+    [[GDTMobileTracking sharedInstance] willTerminate];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

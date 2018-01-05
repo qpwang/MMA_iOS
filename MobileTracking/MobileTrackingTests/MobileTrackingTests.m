@@ -1,6 +1,6 @@
 //
-//  MobileTrackingTests.m
-//  MobileTrackingTests
+//  GDTMobileTrackingTests.m
+//  GDTMobileTrackingTests
 //
 //  Created by Wenqi on 14-3-11.
 //  Copyright (c) 2014年 Admaster. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface MobileTrackingTests : XCTestCase
+@interface GDTMobileTrackingTests : XCTestCase
 
 @end
 
-@implementation MobileTrackingTests
+@implementation GDTMobileTrackingTests
 
 - (void)setUp
 {
